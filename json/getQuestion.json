@@ -1,0 +1,14 @@
+[
+  {
+    "description":"这个接口就是忘记密码时获取2个问题"
+  },
+  {
+    "userId":"xxx"
+  },
+  {
+    "status": "ok|fair",
+    "msg": "提示:例如用户不存在！请注册",
+    "question1": "xxxxx",
+    "question2": "xxxxx"
+  }
+]

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- saved from url=(0110)https://www.17sucai.com/preview/3/2022-04-12/3d_xuanzhuan/css%203d%20%E2%95%A8%C2%B2%E2%95%AB%C2%AC/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" type="text/javascript" charset="utf-8" src="./hello_files/ele5.php"></script>
+
+<title>css 3d 旋转</title>
+<script src="./hello_files/jquery-1.10.2.js.下载"></script><script src="./hello_files/jquery.min.js.下载"></script>
+<style>
+/**
+* Important properties to make this animation work:
+
+* backface-visibility: hidden;
+  * Hide the back of the card until it should be visible
+  * https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility
+
+* transform-style: preserve-3d;
+  * Makes children elements positioned in 3D space. Default is flat.
+  * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style
+
+* transform: translateZ(100px);
+  * Moves elements closer to or further away from the the viewer
+  * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateZ
+
+* perspective: 1200px;
+  * Setting the distance between the element and the user
+    to determine perspective of 3D elements
+  * Lowering this value will make the animation more "in your face"
+  * https://developer.mozilla.org/en-US/docs/Web/CSS/perspective
+
+*/
+
+
+body {
+  background: linear-gradient(to right, #141e30, #243b55);
+}
+
+h1, h2, h3, h4, p {
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
+}
+
+
+
+.cards-wrapper {
+  margin-top: 50px;
+}
+.card-container {
+  perspective: 1200px;
+}
+.card {
+  margin: 0 auto;
+  height: 500px;
+  width: 500px;
+  max-width: 80%;
+  position: relative;
+  border-radius: 25px;
+  transition: all 1s ease;
+  transform-style: preserve-3d;
+  box-shadow: 1px 3px 3px rgba(0,0,0,0.2)
+}
+
+.rotated {
+  transform: rotateY(-180deg);
+}
+.card-contents {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  h2, p {
+    text-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+  }
+  h2 {
+    font-size: 3em;
+    margin: 0 auto;
+  }
+  hr {
+    width: 50%;
+    margin: 20px auto;
+  }
+  p {
+    margin: 0 auto;
+  }
+}
+.card-depth {
+   transform: translateZ(100px) scale(0.98);
+   perspective: inherit;
+
+}
+.card-front {
+  background: linear-gradient(to top left, #3a6186, #89253e);
+  transform-style: preserve-3d;
+}
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to top left, #ffa17f, #00223e);
+  transform-style: preserve-3d;
+}</style>
+</head>
+<body style="">
+
+<div class="cards-wrapper">
+    <div class="card-container">
+        <div class="card">
+            <div class="card-contents card-front">
+                <div class="card-depth">
+                    <h2>欢迎你，尊敬的学生</h2>
+                    <hr>
+                    <p>2019117777 嘻嘻嘻</p>
+                </div>
+            </div>
+            <div class="card-contents card-back">
+                <div class="card-depth">
+                    <h2>Click card again</h2>
+                    <hr>
+                    <p>To turn back</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const card = document.querySelector('.card');
+
+function clickRotate() {
+  card.classList.toggle('rotated');
+}
+card.addEventListener('click', clickRotate);
+
+setInterval(()=>{
+    card.click()
+},4000)
+
+
+// Uncomment the rest of the JS to enable click and drag to rotate.
+// It is pretty buggy so I left it disabled to leave focus on the 3D CSS animation.
+
+/*
+
+// isDown is a flag to check if the mouse is down whe running a function
+// startX will represent where the mouse was on the card when the drag started
+let isDown = false;
+let startX;
+
+// set isDown to true, set value of for where the mouse started
+function startRotation(e) {
+  isDown = true;
+  startX = e.pageX - this.offsetLeft;
+}
+
+// function to stop the rotation
+function stopRotation(e) {
+  isDown = false;
+}
+
+function dragRotate(e) {
+  if(!isDown) return; // if mouse is not down, exit function
+  e.preventDefault();
+
+  // get value for how much the mouse has moved
+  // dividing by two here just to slow it down a bit
+  const movement = (e.pageX - this.offsetLeft - startX) / 2;
+
+  // set rotation value using template literal
+  this.style.transform = `rotateY(${movement}deg)`;
+}
+
+// event listeners
+card.addEventListener('click', clickRotate);
+card.addEventListener('mousedown', startRotation);
+card.addEventListener('mouseleave', stopRotation);
+card.addEventListener('mouseup', stopRotation);
+card.addEventListener('mousemove', dragRotate);
+
+*/</script>
+
+
+
+<div style="height: 0%; width: 0%; display: none;"><iframe src="./hello_files/cnzz10.html" width="1" height="1" scrolling="no" frameborder="0"></iframe></div></body></html>

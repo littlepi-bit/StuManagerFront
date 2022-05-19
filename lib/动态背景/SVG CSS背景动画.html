@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!-- saved from url=(0139)https://www.17sucai.com/preview/3/2022-04-18/SVG_CSS/SVG%20CSS%E2%96%92%E2%94%82%E2%95%9B%E2%96%91%E2%95%A2%C2%BB%E2%95%97%C2%A1/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" type="text/javascript" charset="utf-8" src="./SVG CSS背景动画_files/ele5.php"></script>
+
+<title>SVG CSS背景动画</title>
+<script src="./SVG CSS背景动画_files/jquery-1.10.2.js.下载"></script><script src="./SVG CSS背景动画_files/jquery.min.js.下载"></script>
+<style>
+@import url("static/css/css2.css");
+body {
+  background: linear-gradient(#6bcc82, #15ff73);
+  height: 100vh;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.2em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.main:before, .main:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -3;
+}
+.main:before {
+  right: 0;
+  bottom: -19;
+  height: 30em;
+  width: 30em;
+  border-radius: 30em;
+  background: linear-gradient(#6bcc82, #15ff73);
+  align-self: flex-end;
+  -webkit-animation: gradient-fade 8s ease-in-out 3s infinite alternate;
+          animation: gradient-fade 8s ease-in-out 3s infinite alternate;
+}
+.main:after {
+  top: 0;
+  left: 30;
+  height: 10em;
+  width: 10em;
+  border-radius: 10em;
+  background: linear-gradient(#6bcc82, #15ff73);
+  -webkit-animation: gradient-fade-alt 6s ease-in-out 3s infinite alternate;
+          animation: gradient-fade-alt 6s ease-in-out 3s infinite alternate;
+}
+.main__text-wrapper {
+  position: relative;
+  padding: 2em;
+}
+.main__text-wrapper:before, .main__text-wrapper:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.main__text-wrapper:before {
+  z-index: -1;
+  top: -3em;
+  right: -3em;
+  width: 13em;
+  height: 13em;
+  opacity: 0.7;
+  border-radius: 13em;
+  background: linear-gradient(#15e0ff, #15ff73);
+  -webkit-animation: rotation 7s linear infinite;
+          animation: rotation 7s linear infinite;
+}
+.main__text-wrapper:after {
+  z-index: -1;
+  bottom: -20em;
+  width: 20em;
+  height: 20em;
+  border-radius: 20em;
+  background: linear-gradient(#d000c5, #15ff73);
+  -webkit-animation: rotation 7s linear infinite;
+          animation: rotation 7s linear infinite;
+}
+
+.arrow {
+  z-index: 1000;
+  opacity: 0.5;
+  position: absolute;
+}
+.arrow--top {
+  top: 0;
+  left: -5em;
+}
+.arrow--bottom {
+  bottom: 0;
+  right: 3em;
+}
+
+.circle {
+  transform: translate(50%, -50%) rotate(0deg);
+  transform-origin: center;
+}
+.circle--ltblue {
+  height: 20em;
+  width: 20em;
+  border-radius: 20em;
+  background: linear-gradient(#15e0ff, #6bcc82);
+}
+
+.backdrop {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-color: pink;
+}
+
+.dotted-circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.3;
+  -webkit-animation: rotation 38s linear infinite;
+          animation: rotation 38s linear infinite;
+}
+
+.draw-in {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 10;
+  -webkit-animation: draw 15s ease-in-out alternate infinite;
+          animation: draw 15s ease-in-out alternate infinite;
+}
+
+@-webkit-keyframes draw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.item-to {
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+
+.bounce-1 {
+  -webkit-animation-name: bounce-1;
+          animation-name: bounce-1;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+.bounce-2 {
+  -webkit-animation-name: bounce-2;
+          animation-name: bounce-2;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+.bounce-3 {
+  -webkit-animation-name: bounce-3;
+          animation-name: bounce-3;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@-webkit-keyframes bounce-1 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-1 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes bounce-2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes bounce-2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes bounce-3 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes bounce-3 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes gradient-fade {
+  from {
+    transform: translate(10%, -10%) rotate(0deg);
+  }
+  to {
+    transform: translate(50%, -50%) rotate(360deg);
+  }
+}
+@keyframes gradient-fade {
+  from {
+    transform: translate(10%, -10%) rotate(0deg);
+  }
+  to {
+    transform: translate(50%, -50%) rotate(360deg);
+  }
+}
+@-webkit-keyframes gradient-fade-alt {
+  from {
+    transform: translate(-20%, 20%) rotate(0deg);
+  }
+  to {
+    transform: translate(-60%, 60%) rotate(360deg);
+  }
+}
+@keyframes gradient-fade-alt {
+  from {
+    transform: translate(-20%, 20%) rotate(0deg);
+  }
+  to {
+    transform: translate(-60%, 60%) rotate(360deg);
+  }
+}</style>
+<style type="text/css">@font-face {
+  font-family: 'rbicon';
+  src: url(chrome-extension://dipiagiiohfljcicegpgffpbnjmgjcnf/fonts/rbicon.woff2) format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+</style></head>
+<body class="vsc-initialized" style="">
+  <div class="arrow arrow--top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="270.11" height="649.9" overflow="visible">
+      <style>
+        .geo-arrow {
+          fill: none;
+          stroke: #fff;
+          stroke-width: 2;
+          stroke-miterlimit: 10
+        }
+      </style>
+      <g class="item-to bounce-1">
+        <path class="geo-arrow draw-in" d="M135.06 142.564L267.995 275.5 135.06 408.434 2.125 275.499z"></path>
+      </g>
+      <circle class="geo-arrow item-to bounce-2" cx="194.65" cy="69.54" r="7.96"></circle>
+      <circle class="geo-arrow draw-in" cx="194.65" cy="39.5" r="7.96"></circle>
+      <circle class="geo-arrow item-to bounce-3" cx="194.65" cy="9.46" r="7.96"></circle>
+      <g class="geo-arrow item-to bounce-2">
+        <path class="st0 draw-in" d="M181.21 619.5l13.27 27 13.27-27zM194.48 644.5v-552"></path>
+      </g>
+    </svg>
+  </div>
+  <div class="arrow arrow--bottom">
+    <svg xmlns="http://www.w3.org/2000/svg" width="31.35" height="649.9" overflow="visible">
+      <style>
+        .geo-arrow {
+          fill: none;
+          stroke: #fff;
+          stroke-width: 2;
+          stroke-miterlimit: 10
+        }
+      </style>
+      <g class="item-to bounce-1">
+        <circle class="geo-arrow item-to bounce-3" cx="15.5" cy="580.36" r="7.96"></circle>
+        <circle class="geo-arrow draw-in" cx="15.5" cy="610.4" r="7.96"></circle>
+        <circle class="geo-arrow item-to bounce-2" cx="15.5" cy="640.44" r="7.96"></circle>
+        <g class="item-to bounce-2">
+          <path class="geo-arrow draw-in" d="M28.94 30.4l-13.26-27-13.27 27zM15.68 5.4v552"></path>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <div class="main">
+    <div class="main__text-wrapper">
+    <h1 class="main__title">Transitions &amp; Animations</h1>
+    <h2>Combined with SVGs</h2>
+      <svg xmlns="http://www.w3.org/2000/svg" class="dotted-circle" width="352" height="352" overflow="visible">
+  <circle cx="176" cy="176" r="174" fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="12.921,11.9271"></circle>
+</svg>
+    </div>
+  </div>
+
+<script>
+</script>
+
+
+
+<div style="height: 0%; width: 0%; display: none;"><iframe src="./SVG CSS背景动画_files/cnzz10.html" width="1" height="1" scrolling="no" frameborder="0"></iframe></div><div id="rememberry__extension__root" style="all: unset;"></div></body></html>

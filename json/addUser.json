@@ -1,0 +1,15 @@
+[
+  {
+    "description":"这个接口就是管理员添加用户表"
+  },
+  {
+    "userId": "xxxx",
+    "userName": "xxxxx",
+    "peopleType": "student|teacher|administrators"
+  }
+  ,
+  {
+    "status": "ok|fail",
+    "msg": "例如:用户已经添加....."
+  }
+]

@@ -1,0 +1,43 @@
+[
+
+  [
+    {
+      "description":"这个接口就是学生查看课程"
+    },
+    {
+    "key":"12138B",
+    "courseId":"12138B",
+    "courseName":"离散数学",
+    "courseTime":"周四第一讲",
+    "courseValue":2,
+    "courseCollege": "xxxxx",
+    "teacher":"老赵",
+    "place":"x4136",
+    "capacity":"0/100",
+    "hasSelected": "true|false 这里传入bool类型"
+    },
+    {
+      "key":"12138B",
+      "courseId":"12138B",
+      "courseName":"离散数学",
+      "courseTime":"周四第一讲",
+      "courseValue":2,
+      "teacher":"老赵",
+      "place":"x4136",
+      "capacity":"0/100",
+      "hasSelected": "true|false 这里传入bool类型"
+    },
+    {
+    "key":"12138B",
+    "courseId":"12138B",
+    "courseName":"离散数学",
+    "courseTime":"周四第一讲",
+    "courseValue":2,
+    "teacher":"老赵",
+    "place":"x4136",
+    "capacity":"0/100",
+    "hasSelected": "true|false 这里传入bool类型"
+
+    }
+  ]
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "description":"这个接口就是学生查看所有已经选择的课程"
+  },
+  {
+    "userId": "xxxx"
+  },
+
+  [
+    {
+      "key":"12138B",
+      "courseId":"12138B",
+      "courseName":"离散数学",
+      "courseTime":"周四第一讲",
+      "courseValue":2,
+      "courseCollege": "xxxxx",
+      "teacher":"老赵",
+      "place":"x4136",
+      "capacity":"0/100"
+    },
+    {
+      "key":"12138B",
+      "courseId":"12138B",
+      "courseName":"离散数学",
+      "courseTime":"周四第一讲",
+      "courseValue":2,
+      "courseCollege": "xxxxx",
+      "teacher":"老赵",
+      "place":"x4136",
+      "capacity":"0/100"
+    },
+    {
+      "key":"12138B",
+      "courseId":"12138B",
+      "courseName":"离散数学",
+      "courseTime":"周四第一讲",
+      "courseValue":2,
+      "teacher":"老赵",
+      "place":"x4136",
+      "capacity":"0/100"
+
+    }
+  ]
+]

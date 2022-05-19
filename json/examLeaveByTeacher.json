@@ -1,0 +1,14 @@
+[
+  {
+    "description":"这个接口就是老师审核请假单"
+  },
+  {
+    "leaveId": "xxxx",
+    "userId": "xxx",
+    "out": "pass|refuse"
+  },
+  {
+    "status": "ok|fair",
+    "msg": "提示:审核成功"
+  }
+]

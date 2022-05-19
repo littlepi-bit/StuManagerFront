@@ -1,0 +1,13 @@
+[
+  {
+    "description":"这个接口就是管理员删除已经添加课程"
+  },
+  {
+    "userId": "xxxx",
+    "courseId": "xxx"
+  },
+  {
+    "status": "ok|fail",
+    "msg": "例如:删除成功!"
+  }
+]

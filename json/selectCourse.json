@@ -1,0 +1,14 @@
+[
+  {
+    "description":"这个接口就是学生选择课程"
+  },
+  {
+    "userId": "xxxxx",
+    "courseId": "xxxxx"
+  }
+,
+  {
+    "status": "ok|fail",
+    "message": "例如:选课成功！|冲突选课！|容量不足！"
+  }
+]

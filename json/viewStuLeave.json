@@ -1,0 +1,40 @@
+[
+  {
+    "description":"这个接口就是管理员查看所有请假单"
+  },
+  {
+    "userId": "xxxx"
+  },
+  [
+    {
+      "key":"xxxx :同leaveId",
+      "leaveId": "xxxx",
+      "leaveCourseId":"12138B",
+      "leaveCourseName":"离散数学",
+      "leaveTime":"2022-07-07",
+      "leaveReason":"xxxxx",
+      "courseCollege": "xxxxx",
+      "teacher":"老赵",
+      "place":"x4136",
+      "teacherIdea": "true|false|pending",
+      "administratorIdea": "true|false|pending",
+      "applicantId": "xxxx",
+      "applicantName": "xxxx"
+    },
+    {
+      "key":"xxxx :同leaveId",
+      "leaveId": "xxxx",
+      "leaveCourseId":"12138B",
+      "leaveCourseName":"离散数学",
+      "leaveTime":"2022-07-07",
+      "leaveReason":"xxxxx",
+      "courseCollege": "xxxxx",
+      "teacher":"老赵",
+      "place":"x4136",
+      "teacherIdea": "true|false|pending",
+      "administratorIdea": "true|false|pending",
+      "applicantId": "xxxx",
+      "applicantName": "xxxx"
+    }
+  ]
+]

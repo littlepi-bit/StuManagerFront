@@ -1,0 +1,28 @@
+[
+  {
+    "description":"这个接口就是管理员查看所有用户"
+  },
+  {
+    "userId": "xxxxx"
+  },
+  [
+    {
+    "key": "xxxxx",
+    "userId": "xxxxx",
+    "hasSignIn": "true|false 传bool",
+    "peopleType": "student|teacher|administrators"
+    },
+    {
+      "key": "xxxxx",
+      "userId": "xxxxx",
+      "hasSignIn": "true|false 传bool",
+      "peopleType": "student|teacher|administrators"
+    },
+    {
+      "key": "xxxxx",
+      "userId": "xxxxx",
+      "hasSignIn": "true|false 传bool",
+      "peopleType": "student|teacher|administrators"
+    }
+  ]
+]

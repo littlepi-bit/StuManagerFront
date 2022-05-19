@@ -1,0 +1,19 @@
+[
+  {
+    "description":"这个接口就是用户查看已经收到的邮件"
+  },
+  {
+    "userId": "xxx"
+  },
+  [
+    {
+      "fromId": "Xxxxx",
+      "sendTime": "2022-05-03 上午 10:54:24",
+      "sendMessage": "xxxxxxxx",
+      "title": "xxxx",
+      "hasRead": "true|false 传bool",
+      "messageId":"xxxx",
+      "key": "xxxx :同messageId"
+    }
+  ]
+]

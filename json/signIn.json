@@ -1,0 +1,22 @@
+[
+  {
+    "description":"这个接口就是用户注册"
+  },
+  {
+    "peopleType": "student|teacher|administrators",
+    "userId": "xxxx",
+    "userName": "xxxx",
+    "password": "xxxx",
+    "userEmail": "xxxx",
+    "question1": "xx",
+    "answer1": "xx",
+    "question2": "xx",
+    "answer2": "xxx"
+  }
+  ,
+  {
+    "msg": "提示：例如用户Id重复",
+    "status": "ok|fail",
+    "token": "ok传token,fail传空字符串"
+  }
+]

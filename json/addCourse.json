@@ -1,0 +1,21 @@
+[
+  {
+    "description":"这个接口就是管理员添加课程"
+  },
+  {
+    "userId": "x",
+    "password":"xxx和userId配合，验证身份",
+    "courseId": "123",
+    "courseCollege": "xxxxx",
+    "courseName": "xxxx",
+    "place": "x7777",
+    "teacher": "老赵",
+    "courseTime": "周四第1讲",
+    "courseValue": "2",
+    "maxCapacity": "100"
+  },
+  {
+    "status": "ok|fail",
+    "msg": "例如:课程已经添加....."
+  }
+]

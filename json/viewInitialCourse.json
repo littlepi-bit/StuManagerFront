@@ -1,0 +1,35 @@
+[
+  {
+    "description":"这个接口就是管理员查看所有课程"
+  },
+  {
+    "userId": "xxxx",
+    "password": "xxxx验证身份"
+  },
+  [
+    {
+      "key":"12138B",
+      "courseId":"12138B",
+      "courseName":"离散数学",
+      "courseTime":"周四第一讲",
+      "courseValue":2,
+      "courseCollege": "xxxxx",
+      "teacher":"老赵",
+      "place":"x4136",
+      "maxCapacity":"100",
+      "hasAgreed": "true|false|pending"
+    },
+    {
+      "key":"12138B",
+      "courseId":"12138B",
+      "courseName":"离散数学",
+      "courseTime":"周四第一讲",
+      "courseValue":2,
+      "courseCollege": "xxxxx",
+      "teacher":"老赵",
+      "place":"x4136",
+      "maxCapacity":"100",
+      "hasAgreed": "true|false|pending"
+    }
+  ]
+]

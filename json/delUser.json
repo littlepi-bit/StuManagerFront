@@ -1,0 +1,13 @@
+[
+  {
+    "description":"这个接口就是管理员删除已经添加的用户"
+  },
+  {
+    "userId": "操作者的Id xxxx",
+    "delUserId": "被删除的Id"
+  },
+  {
+    "status": "ok|fail",
+    "message": "例如:删除成功!"
+  }
+]

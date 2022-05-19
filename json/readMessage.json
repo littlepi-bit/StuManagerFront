@@ -1,0 +1,13 @@
+[
+  {
+    "description":"这个接口就是用户已读邮件"
+  },
+  {
+    "messageId": "xxxx",
+    "userId" : "xxxx"
+  },
+  {
+    "message": "提示：记录成功...",
+    "status": "ok|fail"
+  }
+]

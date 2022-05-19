@@ -1,0 +1,16 @@
+[
+  {
+    "description":"这个接口就是登录接口"
+  },
+  {
+    "userId":"xxxx",
+    "password": "xxxx"
+  }
+  ,
+  {
+    "msg": "ok|fail",
+    "peopleType": "student|teacher|administrators",
+    "userName" : "xxxx",
+    "token": "xxxxx"
+  }
+]

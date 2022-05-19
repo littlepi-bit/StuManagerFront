@@ -1,0 +1,14 @@
+[
+  {
+    "description":"这个接口就是老师选择自己是否上这门课"
+  },
+  {
+    "userId": "xxxx",
+    "courseId": "xxx",
+    "attitude" :"pass|reject"
+  },
+  {
+    "status": "ok|fail",
+    "msg": "例如:成功选择该课!"
+  }
+]

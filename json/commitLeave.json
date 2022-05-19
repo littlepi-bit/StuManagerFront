@@ -1,0 +1,16 @@
+[
+  {
+    "description":"这个接口就是学生提交请假单"
+  },
+  {
+    "leaveTime": "2022-07-11",
+    "leaveCourseId": "xxxx",
+    "leaveReason": "Xxx",
+    "userId": "xxx"
+  }
+  ,
+  {
+    "message": "提示：提交成功!",
+    "status": "ok|fail"
+  }
+]

@@ -1,0 +1,50 @@
+.Main {
+  .header {
+    color: white;
+    background: #1DA57A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    button {
+      color: #1DA57A;
+      padding: 0;
+      box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+      height: 50px;
+      background-size: 300% 100%;
+      width: 150px;
+      border-radius: 40px;
+      line-height: 50px;
+      &:hover {
+        transition: all .4s ease-in-out;
+        background-position: 100% 0;
+      }
+    }
+  }
+  aside {
+    svg {
+      width: 1em;
+      height: 1em;
+    }
+    svg,svg path {
+      fill:currentColor;
+      font-size: 18px;
+    }
+  }
+  main {
+    .myForm {
+      .ant-col-8 {
+        flex: none;
+      }
+      .ant-col-offset-8 {
+      }
+      textarea {
+        height: 300px;
+      }
+      width: 50%;
+      margin: 0;
+      overflow: hidden;
+    }
+  }
+
+}
