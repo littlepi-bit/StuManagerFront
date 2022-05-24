@@ -5,7 +5,14 @@
   {
     "userId": "xxxx",
     "userName": "xxxxx",
-    "peopleType": "student|teacher|administrators"
+    "peopleType": "student|teacher|administrators",
+    "userSex": "学生|老师会有",
+    "userGrade": "学生",
+    "userCollege": "学生|老师",
+    "userMajor": "学生",
+    "userClass": "学生",
+    "userTitle": "老师",
+    "userType": "管理员"
   }
   ,
   {
