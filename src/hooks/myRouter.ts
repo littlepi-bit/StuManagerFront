@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import {
     AdministratorsAccountControl,
     AdministratorsSelectCourseMenuType,
@@ -6,7 +6,9 @@ import {
     PeopleType,
     SpecificMenuType,
     StudentLeaveMenuType,
-    StudentSelectCourseMenuType, TeacherAndAdministratorsLeaveMenuType, TeacherSelectCourseMenuType
+    StudentSelectCourseMenuType,
+    TeacherAndAdministratorsLeaveMenuType,
+    TeacherSelectCourseMenuType
 } from "../components/Main/mainConfig";
 import {isInEnum} from "../tools";
 
@@ -144,7 +146,9 @@ export const useMainRoute = (people:PeopleType, specific:SpecificMenuType):Funct
                         case "sub3":{
 
                             return navigate(`/main/${people}/${AdministratorsSelectCourseMenuType.admViewCourse}`)
-
+                        }
+                        case "sub4":{
+                            return navigate(`/main/${people}/${AdministratorsSelectCourseMenuType.admViewStuCourse}`)
                         }
                     }
 

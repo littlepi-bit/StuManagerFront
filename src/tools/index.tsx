@@ -1,4 +1,4 @@
-import {message} from "antd";
+import {message, Modal} from "antd";
 import axios from "axios";
 import {
     AdministratorsAccountControl,
@@ -16,7 +16,7 @@ export const isInEnum = (value:any,Enum:any):boolean=>{
 }
 
 export const getPostUrl = (api:string):string =>{
-    let defaultUrl = "http://120.77.12.35:8000"
+    let defaultUrl = "http://120.77.12.35:3000"
     return defaultUrl + api
 }
 
@@ -94,6 +94,8 @@ export const getSub = (specific:SpecificMenuType):number=>{
             return 2
         case AdministratorsSelectCourseMenuType.admViewCourse:
             return 3
+        case AdministratorsSelectCourseMenuType.admViewStuCourse:
+            return 4
         case MessageMenuType.seeAllReceive:
             return 1
         case MessageMenuType.writeMessage:
@@ -102,4 +104,13 @@ export const getSub = (specific:SpecificMenuType):number=>{
             return 3
     }
     return 0
+}
+
+
+export function info(title:string,msg:JSX.Element) {
+    Modal.info({
+        title,
+        content:msg,
+        onOk() {},
+    });
 }

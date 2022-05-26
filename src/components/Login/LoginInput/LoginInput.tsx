@@ -20,6 +20,7 @@ const LoginInput:React.FC = () => {
     useEffect(
         ()=>{
             if (beforeUserPassword.length && beforeUserId.length){
+                rememberValue.current.checked = true
                 tellSuccess('已经自动填写您的账号信息！')
             }
         }
@@ -99,7 +100,11 @@ const LoginInput:React.FC = () => {
                 </div>
                 <div className="input">
                     <div className="label">密码</div>
-                    <input defaultValue = {beforeUserPassword} ref={passwordValue} placeholder={"请输入密码"} type="password"/>
+                    <input onKeyDown={e=>{
+                        if (e.key === 'Enter'){
+                            tryLogin()
+                        }
+                    }}  defaultValue = {beforeUserPassword} ref={passwordValue} placeholder={"请输入密码"} type="password"/>
                 </div>
                 <div className="remember">
                     <div className="left">

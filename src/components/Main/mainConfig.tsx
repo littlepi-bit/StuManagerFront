@@ -107,7 +107,8 @@ export enum TeacherAndAdministratorsLeaveMenuType {
 export enum AdministratorsSelectCourseMenuType {
     addNewCourse = "addNewCourse",
     delAddedCourse = "delAddedCourse",
-    admViewCourse = "admViewCourse"
+    admViewCourse = "admViewCourse",
+    admViewStuCourse = "admViewStuCourse"
 }
 export enum AdministratorsAccountControl {
 

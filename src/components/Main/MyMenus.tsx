@@ -1,24 +1,32 @@
 import {
     AdministratorsAccountControl,
     AdministratorsSelectCourseMenuType,
+    MessageMenuType,
     myMenuItem,
     PeopleType,
     SpecificMenuType,
     StudentLeaveMenuType,
-    StudentSelectCourseMenuType, TeacherAndAdministratorsLeaveMenuType, TeacherSelectCourseMenuType
+    StudentSelectCourseMenuType,
+    TeacherAndAdministratorsLeaveMenuType,
+    TeacherSelectCourseMenuType
 } from "./mainConfig";
 import {isInEnum} from "../../tools";
 import {
-    AddUserIcon, AdminViewCourseIcon,
+    AddUserIcon,
+    AdminViewCourseIcon,
     AllCourseIcon,
     CommitLeaveIcon,
-    DelCourseIcon, DelUserIcon, JugLeaveIcon,
+    DelCourseIcon,
+    DelUserIcon,
+    JugLeaveIcon,
     ViewCourseIcon,
     ViewLeaveIcon,
-    ViewMsgReceiveIcon, ViewMsgSendIcon, ViewUserIcon, WriteMsgIcon
+    ViewMsgReceiveIcon,
+    ViewMsgSendIcon,
+    ViewUserIcon,
+    WriteMsgIcon
 } from "../../icons";
 import React from "react";
-import {MessageMenuType} from "./mainConfig";
 import {FileAddOutlined} from "@ant-design/icons";
 
 export const getMenu = (peopleType:PeopleType, specificType:SpecificMenuType):myMenuItem[]=>{
@@ -136,7 +144,11 @@ export const getMenu = (peopleType:PeopleType, specificType:SpecificMenuType):my
                     {
                         icon:<AdminViewCourseIcon/>,
                         label:"查看选课情况"
-                    }
+                    },
+                    // {
+                    //     icon:<AdmAllCourseIcon/>,
+                    //     label:"查看学生选课界面"
+                    // }
                 ]
             }
             else if (isInEnum(specificType,TeacherAndAdministratorsLeaveMenuType)){

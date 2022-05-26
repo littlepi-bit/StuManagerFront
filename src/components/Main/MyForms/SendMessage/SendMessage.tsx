@@ -1,11 +1,8 @@
-import {Form, Input, Button, Checkbox, DatePicker, Select} from 'antd';
+import {Button, Form, Input, Select} from 'antd';
 import 'moment/locale/zh-cn';
-import locale from 'antd/es/date-picker/locale/zh_CN';
-import {useEffect, useState} from "react";
 import {getUserInformation, myPost, tellError, tellSuccess} from "../../../../tools";
 import moment from 'moment';
 
-const { Option } = Select;
 
 const SendMessage = () => {
     const onFinish = (values: any) => {
@@ -33,9 +30,7 @@ const SendMessage = () => {
     const onFinishFailed = (errorInfo: any) => {
         console.log('Failed:', errorInfo);
     };
-    const onChange = () => {
 
-    }
 
 
     return (

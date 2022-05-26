@@ -1,7 +1,7 @@
-import {Form, Input, Button,  Radio} from 'antd';
+import {Button, Form, Input, Radio} from 'antd';
 import 'moment/locale/zh-cn';
 import React, {useEffect, useRef, useState} from "react";
-import { myPost, tellError, tellSuccess} from "../../../../tools";
+import {myPost, tellError, tellSuccess} from "../../../../tools";
 import {PeopleType} from "../../mainConfig";
 
 enum MyState {

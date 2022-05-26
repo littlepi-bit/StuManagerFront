@@ -1,0 +1,18 @@
+[
+  {
+    "description":"这个接口就是获取所有老师信息"
+  },
+  {
+    "userId":"xxx"
+  },
+  [
+    {
+      "userName": "xxxxx",
+      "userId": "xxxx"
+    },
+    {
+      "userName": "xxxxx",
+      "userId": "xxxx"
+    }
+  ]
+]

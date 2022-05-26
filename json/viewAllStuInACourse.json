@@ -1,0 +1,24 @@
+[
+  {
+    "description":"这个接口就是通过课程Id查找对应上课学生"
+  },
+  {
+    "courseId": "xxx"
+  },
+  [
+    {
+      "key": "xxx",
+      "userId": "xxx",
+      "userName": "xxxx",
+      "userSex": "xxxx",
+      "userClass": "xxxxx"
+    },
+    {
+      "key": "xxx",
+      "userId": "xxx",
+      "userName": "xxxx",
+      "userSex": "xxxx",
+      "userClass": "xxxxx"
+    }
+  ]
+]

@@ -131,7 +131,7 @@ const Main=() => {
             <Header className="header">
                 <Button onClick={toOptions} type={"default"}>返回选择界面</Button>
                 <div className="hello">
-                    欢迎 {userName} 同学!
+                    欢迎 {userName} {people === PeopleType.student?"同学":people===PeopleType.teacher?"老师":"管理员"}!
                 </div>
             </Header>
             <Layout>

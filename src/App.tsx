@@ -1,9 +1,8 @@
 import React from 'react';
 import Login from "./components/Login/Login";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
 import Main from "./components/Main/Main";
 import "./App.less"
-import { Navigate } from 'react-router-dom';
 import Options from "./components/Options/Options";
 import SignIn from "./components/SignIn/SignIn";
 import ForgetPassword from "./components/ForgetPassword/ForgetPassword";
