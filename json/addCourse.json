@@ -5,7 +5,7 @@
   {
     "userId": "x",
     "password":"xxx和userId配合，验证身份",
-//    "courseId": "123",
+    "courseId": "123",
     "courseCollege": "xxxxx",
     "courseName": "xxxx",
     "place": "x7777",
