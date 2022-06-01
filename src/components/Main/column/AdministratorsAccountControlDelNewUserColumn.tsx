@@ -37,6 +37,14 @@ export default function AdministratorsAccountControlDelNewUserColumn(forceUpdate
             key:"userId"
         },
         {
+            title: "用户名",
+            dataIndex: "userName",
+            key: "userName",
+            render:(_:any,record:any)=>{
+                return <a>{_}</a>
+            }
+        },
+        {
             title:"是否注册",
             dataIndex:"hasSignIn",
             key:"hasSignIn",

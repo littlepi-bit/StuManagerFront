@@ -7,22 +7,25 @@
   },
   [
     {
-    "key": "xxxxx",
-    "userId": "xxxxx",
-    "hasSignIn": "true|false 传bool",
-    "peopleType": "student|teacher|administrators"
+      "key": "xxxxx",
+      "userId": "xxxxx",
+      "hasSignIn": "true|false 传bool",
+      "peopleType": "student|teacher|administrators",
+      "userName": "xxxx"
     },
     {
       "key": "xxxxx",
       "userId": "xxxxx",
       "hasSignIn": "true|false 传bool",
-      "peopleType": "student|teacher|administrators"
+      "peopleType": "student|teacher|administrators",
+      "userName": "xxxx"
     },
     {
       "key": "xxxxx",
       "userId": "xxxxx",
       "hasSignIn": "true|false 传bool",
-      "peopleType": "student|teacher|administrators"
+      "peopleType": "student|teacher|administrators",
+      "userName": "xxxx"
     }
   ]
 ]

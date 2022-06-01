@@ -217,12 +217,12 @@ export const waitData = (type:PeopleType, specificType:SpecificMenuType):Promise
         case PeopleType.teacher: {
             switch (specificType) {
                 case TeacherAndAdministratorsLeaveMenuType.viewStuLeave: {
-                    return myPost('/viewStuLeaveByTeacher',{
+                    return myPost('/viewStuLeave',{
                         userId
                     })
                 }
                 case TeacherAndAdministratorsLeaveMenuType.examStuLeave: {
-                    return myPost('/viewStuLeaveByTeacher',{
+                    return myPost('/viewStuLeave',{
                         userId
                     })
                 }

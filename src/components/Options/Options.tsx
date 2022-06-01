@@ -42,8 +42,8 @@ const getOptionConfig = (people:PeopleType):configForOptions[]=>{
                 },
                 {
                     icon: <AboutLeaveIcon />,
-                    title: "请假审批",
-                    tips: "老师可以在这个板块查看学生请假情况，并且审批"
+                    title: "请假相关",
+                    tips: "老师可以在这个板块查看学生请假情况，并且审批，同时也可以申请请假"
                 },
                 {
                     icon: <AboutMsgIcon />,

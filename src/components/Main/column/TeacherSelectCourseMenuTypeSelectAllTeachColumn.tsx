@@ -71,7 +71,7 @@ export default function TeacherSelectCourseMenuTypeSelectAllTeachColumn(forceUpd
             key:"operation",
             render:(_:any,record:any)=>{
                 let {userId} = getUserInformation()
-                let {courseId} = record
+                let {courseId,hasAgreed} = record
                 const choose = (attitude:string) => {
                     myPost('/whetherTeaching',{
                         userId,
@@ -90,8 +90,18 @@ export default function TeacherSelectCourseMenuTypeSelectAllTeachColumn(forceUpd
                     })
                 }
                 return <>
-                    <Button style={{marginRight:20}} onClick={()=>choose('pass')} type={"primary"}>选择该课程</Button>
-                    <Button onClick={()=>choose('reject')} danger type={"primary"}>拒绝该课程</Button>
+                    {
+                        hasAgreed === "pending"?<>
+                            <Button style={{marginRight:20}} onClick={()=>choose('pass')} type={"primary"}>选择该课程</Button>
+                            <Button onClick={()=>choose('reject')} danger type={"primary"}>拒绝该课程</Button>
+                        </>:hasAgreed === "true"?<>
+                            <Button style={{marginRight:20}} onClick={()=>choose('reject')} danger type={"primary"}>重新拒绝</Button>
+                            <Button disabled  type={"primary"}>已经同意</Button>
+                        </>:<>
+                            <Button style={{marginRight:20}} onClick={()=>choose('pass')} type={"primary"}>重新选择</Button>
+                            <Button disabled danger type={"primary"}>已经拒绝</Button>
+                        </>
+                    }
                 </>
             }
         }

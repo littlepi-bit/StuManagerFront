@@ -2,9 +2,23 @@ import {Button, Form, Input, Select} from 'antd';
 import 'moment/locale/zh-cn';
 import {getUserInformation, myPost, tellError, tellSuccess} from "../../../../tools";
 import moment from 'moment';
+import React, {useEffect, useState} from "react";
 
-
+const {Option} = Select
 const SendMessage = () => {
+    const [data,setData] = useState([])
+    useEffect(
+        ()=>{
+            const {userId} = getUserInformation()
+            //获取所有已经注册了的用户信息
+            myPost('/viewAlreadyRegisteredUsers',{
+                userId
+            }).then(r=>{
+                setData(r.data)
+            })
+        }
+        ,[]
+    )
     const onFinish = (values: any) => {
         const {userId} = getUserInformation()
         console.log('Success:', values);
@@ -44,13 +58,21 @@ const SendMessage = () => {
             autoComplete="off"
         >
             <Form.Item
-                label="收件人　"
                 name="toId"
+                label="收件人　"
+                hasFeedback
                 rules={[{ required: true, message: '请输入您要发送的对象!' }]}
             >
-                <Input/>
+                <Select placeholder="请选择一个用户">
+                    {
+                        data.map(e=>{
+                            let {userId,userName}  = e
+                            const info = `${userName}(${userId})`
+                            return <Option value={info}>{info}</Option>
+                        })
+                    }
+                </Select>
             </Form.Item>
-
             <Form.Item
                 label="邮件标题"
                 name="title"

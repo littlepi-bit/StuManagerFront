@@ -3,7 +3,7 @@ import axios from "axios";
 import {
     AdministratorsAccountControl,
     AdministratorsSelectCourseMenuType,
-    MessageMenuType,
+    MessageMenuType, PeopleType,
     SpecificMenuType,
     StudentLeaveMenuType,
     StudentSelectCourseMenuType,
@@ -42,7 +42,11 @@ axios.interceptors.response.use(
         return  Promise.reject(error);
     }
 );
-export const myPost = (url:string,data:{})=>{
+export const myPost = (url:string,data:any)=>{
+    if (!data.userId){
+        let {userId} = getUserInformation()
+        data.userId = userId
+    }
     return axios.post(getPostUrl(url), data, {
         headers: {
             'Content-Type': 'application/json',
@@ -113,4 +117,42 @@ export function info(title:string,msg:JSX.Element) {
         content:msg,
         onOk() {},
     });
+}
+
+export function getTitle(people:PeopleType,specific:SpecificMenuType):string {
+    switch (people) {
+        case PeopleType.student: {
+            if (isInEnum(specific,StudentSelectCourseMenuType)){
+                return "选择课程"
+            }else if (isInEnum(specific,StudentLeaveMenuType)){
+                return "日常请假"
+            }else if (isInEnum(specific,MessageMenuType)){
+                return "邮件管理"
+            }
+            break
+        }
+        case PeopleType.teacher: {
+            if (isInEnum(specific,TeacherSelectCourseMenuType)){
+                return "课程相关"
+            }else if (isInEnum(specific,TeacherAndAdministratorsLeaveMenuType)){
+                return "请假相关"
+            }else if (isInEnum(specific,MessageMenuType)){
+                return "邮件管理"
+            }
+            break
+        }
+        case PeopleType.administrators: {
+            if (isInEnum(specific,AdministratorsSelectCourseMenuType)){
+                return "管理课程"
+            }else if (isInEnum(specific,TeacherAndAdministratorsLeaveMenuType)){
+                return "请假审批"
+            }else if (isInEnum(specific,MessageMenuType)){
+                return "邮件管理"
+            }else if (isInEnum(specific,AdministratorsAccountControl)){
+                return "账号管理"
+            }
+            break
+        }
+    }
+    return ""
 }

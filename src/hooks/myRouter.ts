@@ -114,7 +114,8 @@ export const useMainRoute = (people:PeopleType, specific:SpecificMenuType):Funct
                         case "sub2":{
                             return navigate(`/main/${people}/${TeacherAndAdministratorsLeaveMenuType.viewStuLeave}`)
                         }
-
+                        case "sub3":{
+                            return navigate(`/main/${people}/${TeacherAndAdministratorsLeaveMenuType.teaCommitLeave}`)                        }
                     }
                 }
                 else if (isInEnum(specific,MessageMenuType)){

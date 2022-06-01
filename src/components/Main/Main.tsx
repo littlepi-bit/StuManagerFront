@@ -10,10 +10,11 @@ import {
     PeopleType,
     SpecificMenuType,
     StudentLeaveMenuType,
+    TeacherAndAdministratorsLeaveMenuType,
 } from './mainConfig'
 import {getColumns, waitData} from "./MyTables";
 import {getMenu} from "./MyMenus";
-import {getSub, getUserInformation} from "../../tools";
+import {getSub, getTitle, getUserInformation} from "../../tools";
 import CommitLeave from "./MyForms/CommitLeave/CommitLeave";
 import SendMessage from "./MyForms/SendMessage/SendMessage";
 import AddCourse from "./MyForms/AddCourse/AddCourse";
@@ -81,14 +82,14 @@ const Main=() => {
 
 
 
-    let formList:SpecificMenuType[] = [StudentLeaveMenuType.commitLeave,MessageMenuType.writeMessage,AdministratorsSelectCourseMenuType.addNewCourse,AdministratorsAccountControl.addNewUser]
+    let formList:SpecificMenuType[] = [StudentLeaveMenuType.commitLeave,MessageMenuType.writeMessage,AdministratorsSelectCourseMenuType.addNewCourse,AdministratorsAccountControl.addNewUser,TeacherAndAdministratorsLeaveMenuType.teaCommitLeave]
     if (formList.indexOf(specific)>=0){
         //表单
         switch (specific) {
             case StudentLeaveMenuType.commitLeave:{
 
                 mainInfo = <div className={"myForm"}>
-                    <CommitLeave/>
+                    <CommitLeave peopleType={people}/>
                 </div>
                 break
             }
@@ -107,6 +108,12 @@ const Main=() => {
             case AdministratorsAccountControl.addNewUser :{
                 mainInfo = <div className={"myForm"}>
                     <AddUser/>
+                </div>
+                break
+            }
+            case TeacherAndAdministratorsLeaveMenuType.teaCommitLeave:{
+                mainInfo = <div className={"myForm"}>
+                    <CommitLeave peopleType={people}/>
                 </div>
                 break
             }
@@ -130,6 +137,7 @@ const Main=() => {
         <Layout>
             <Header className="header">
                 <Button onClick={toOptions} type={"default"}>返回选择界面</Button>
+                <div className="title">{getTitle(people,specific)}</div>
                 <div className="hello">
                     欢迎 {userName} {people === PeopleType.student?"同学":people===PeopleType.teacher?"老师":"管理员"}!
                 </div>

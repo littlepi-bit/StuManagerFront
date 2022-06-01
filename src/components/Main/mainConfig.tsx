@@ -96,7 +96,8 @@ export enum TeacherSelectCourseMenuType {
 }
 export enum TeacherAndAdministratorsLeaveMenuType {
     viewStuLeave = "viewStuLeave",
-    examStuLeave = "examStuLeave"
+    examStuLeave = "examStuLeave",
+    teaCommitLeave = "teaCommitLeave"
 }
 
 

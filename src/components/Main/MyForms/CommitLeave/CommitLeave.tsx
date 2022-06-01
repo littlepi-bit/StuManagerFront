@@ -1,17 +1,18 @@
-import {Button, DatePicker, Form, Input, Select} from 'antd';
+import {Button, Form, Input, Select} from 'antd';
 import 'moment/locale/zh-cn';
-import locale from 'antd/es/date-picker/locale/zh_CN';
 import {useEffect, useState} from "react";
 import {getUserInformation, myPost, tellError, tellSuccess} from "../../../../tools";
 
 const { Option } = Select;
 
-const CommitLeave = () => {
+const CommitLeave:React.FC<{
+    peopleType:string
+}> = ({peopleType}) => {
     const onFinish = (values: any) => {
         const {userId} = getUserInformation()
         console.log('Success:', values);
         myPost('/commitLeave',{
-            leaveTime:values.leaveTime.format('YYYY-MM-DD'),
+            leaveTime:values.leaveTime+selectTime,
             leaveCourseId:values.leaveCourseId,
             leaveReason:values.leaveReason,
             userId
@@ -27,20 +28,30 @@ const CommitLeave = () => {
         })
     };
 
+
     const onFinishFailed = (errorInfo: any) => {
         console.log('Failed:', errorInfo);
     };
-    const onChange = () => {
+    const [courses,changeCourses] = useState<any>([])
+    const [selectTime,changeSelectTime] = useState<any>("请先选择一门课程!")
 
+    const onChange = (e:any) => {
+        for (let i = 0; i < courses.length; i++) {
+            if (courses[i].key === e){
+                console.log(courses[i])
+                changeSelectTime(courses[i].courseTime)
+                break
+            }
+        }
     }
-    const [courses,changeCourses] = useState([])
     useEffect(()=>{
         const {userId} = getUserInformation()
-        myPost('/viewSelectedCourse',{
+        const api = peopleType === "student"?"/viewSelectedCourse":'/viewAllNeedTeach'
+        myPost(api,{
             userId
         }).then(r=>{
-            let out = r.data.map((e: { key: any; courseId: any; courseName: any; })=>{
-                return {key:e.key,courseId:e.courseId,courseName:e.courseName}
+            let out = r.data.map((e: { key: any; courseId: any; courseName: any;courseTime:any })=>{
+                return {key:e.key,courseId:e.courseId,courseName:e.courseName,courseTime:e.courseTime}
             })
             changeCourses(out)
         })
@@ -62,11 +73,24 @@ const CommitLeave = () => {
                 name="leaveTime"
                 rules={[{ required: true, message: '请输入您的请假范围!' }]}
             >
-                <DatePicker locale={locale} />
+                <Select
+                    placeholder="选择要请假的周次"
+                    optionFilterProp="children"
+                    style={{width:"50%"}}
+                >
+                    {
+                        new Array(18).fill(0).map((_:any,index:number)=>{
+                            const info =`第${index+1}周`
+                            return  <Option key={info}  value={info}>{info}</Option>
+                        })
+                    }
+                </Select>
+                <Input value={selectTime} style={{width:"50%"}} disabled></Input>
             </Form.Item>
             <Form.Item
                 label="请假课程"
                 name="leaveCourseId"
+                hasFeedback
                 rules={[{ required: true, message: '请选择您的请假课程!' }]}
             >
                 <Select
@@ -87,7 +111,7 @@ const CommitLeave = () => {
                 rules={[{ required: true, message: '请输入您的请假理由!' }]}
             >
                 <Input.TextArea />
-            </Form.Item>
+              </Form.Item>
 
 
 

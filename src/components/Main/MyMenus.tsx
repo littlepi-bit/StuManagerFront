@@ -108,7 +108,11 @@ export const getMenu = (peopleType:PeopleType, specificType:SpecificMenuType):my
                     {
                         icon:<ViewLeaveIcon/>,
                         label:"查看提交的请假单"
-                    }
+                    },
+                    {
+                        icon:<CommitLeaveIcon/>,
+                        label:"申请全新的请假单"
+                    },
                 ]
             }
             else if (isInEnum(specificType,MessageMenuType)){

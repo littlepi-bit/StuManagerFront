@@ -1,0 +1,18 @@
+[
+  {
+    "description":"这个接口就是获取所有【已经注册了】的用户信息，（用于发邮件）"
+  },
+  {
+    "userId":"xxx"
+  },
+  [
+    {
+      "userName": "xxxxx",
+      "userId": "xxxx"
+    },
+    {
+      "userName": "xxxxx",
+      "userId": "xxxx"
+    }
+  ]
+]
