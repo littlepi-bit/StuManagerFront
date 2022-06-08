@@ -3,7 +3,8 @@ import axios from "axios";
 import {
     AdministratorsAccountControl,
     AdministratorsSelectCourseMenuType,
-    MessageMenuType, PeopleType,
+    MessageMenuType,
+    PeopleType,
     SpecificMenuType,
     StudentLeaveMenuType,
     StudentSelectCourseMenuType,
@@ -51,7 +52,8 @@ export const myPost = (url:string,data:any)=>{
         headers: {
             'Content-Type': 'application/json',
             'token': sessionStorage['token']
-        }
+        },
+        withCredentials: true
     })
 }
 

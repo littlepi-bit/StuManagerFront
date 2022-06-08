@@ -38,6 +38,8 @@ const SignIn = () => {
                     sessionStorage['userName'] =userName
                     sessionStorage['password'] =userPassword
                     sessionStorage['token'] = token
+                    sessionStorage['peopleType'] = peopleType
+
 
                     //跳转
                     switch (peopleType as PeopleType) {

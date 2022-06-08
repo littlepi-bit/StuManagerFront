@@ -4,7 +4,7 @@ import {useOptionsRoute, useToLogin} from "../../hooks/myRouter";
 import {useParams} from "react-router-dom";
 import {PeopleType} from "../Main/mainConfig";
 import {AboutCourseIcon, AboutLeaveIcon, AboutMsgIcon, AccountControlIcon} from "../../icons";
-import {getUserInformation} from "../../tools";
+import {getUserInformation, myPost,tellError} from "../../tools";
 
 interface configForOptions {
     title:string,
@@ -97,17 +97,27 @@ const Options = () => {
     const params = useParams()
     const toMain = useOptionsRoute(params.people)
     const toLogin = useToLogin()
+
     const config = getOptionConfig(params.people as PeopleType)
     const appellation = getAppellation(params.people as PeopleType)
     const [rotated,changeRotate] = useState(false)
     const {userId,userName} = getUserInformation()
     useEffect(
         ()=>{
+            // 先判断你是否是正常方式登录
+            if (!sessionStorage['userId']||!sessionStorage['password']){
+                tellError('抱歉，您还没有登录！')
+                toLogin()
+            }
+            if (sessionStorage['peopleType'] !== params.people){
+                tellError('无权访问!')
+                toLogin()
+            }
             let now = rotated
-           let loop = setInterval(()=>{
+            let loop = setInterval(()=>{
                now = !now
                changeRotate(now)
-           },6000)
+            },6000)
             return ()=>{
                clearInterval(loop)
             }
@@ -145,7 +155,13 @@ const Options = () => {
 						右 边 选 择 您 需 要 的 操 作
 					</span>
                     </button>
-                    <button  className="follow" onClick={toLogin}>
+                    <button  className="follow" onClick={()=>{
+                        myPost('/exitLogin',{
+
+                        }).then(r=>{
+                            toLogin()
+                        })
+                    }}>
                         <i className="icon ">
                         </i>
                         <span>

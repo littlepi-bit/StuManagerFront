@@ -1,7 +1,7 @@
 import {Button, Layout, Menu, MenuProps, Skeleton, Table} from 'antd';
 import React, {useEffect, useState} from "react"
 import "./index.scss"
-import {useMainRoute, useToOptions} from "../../hooks/myRouter";
+import {useMainRoute, useToLogin, useToOptions} from "../../hooks/myRouter";
 import {useParams} from "react-router-dom";
 import {
     AdministratorsAccountControl,
@@ -14,7 +14,7 @@ import {
 } from './mainConfig'
 import {getColumns, waitData} from "./MyTables";
 import {getMenu} from "./MyMenus";
-import {getSub, getTitle, getUserInformation} from "../../tools";
+import {getSub, getTitle, getUserInformation, tellError} from "../../tools";
 import CommitLeave from "./MyForms/CommitLeave/CommitLeave";
 import SendMessage from "./MyForms/SendMessage/SendMessage";
 import AddCourse from "./MyForms/AddCourse/AddCourse";
@@ -37,6 +37,7 @@ const Main=() => {
     const people = (params.people) as PeopleType
     const specific = (params.specific) as SpecificMenuType
     const toOptions = useToOptions(people)
+    const toLogin = useToLogin()
 
     const toRoute = useMainRoute(people,specific)
     const {userName} = getUserInformation()
@@ -52,7 +53,20 @@ const Main=() => {
     );
     const [tableData,changeTableData] = useState(null)
     const [forceFlag,forceUpdate] = useState(null)
-
+    useEffect(
+        ()=>{
+            // 先判断你是否是正常方式登录
+            if (!sessionStorage['userId']||!sessionStorage['password']){
+                tellError('抱歉，您还没有登录！')
+                toLogin()
+            }
+            if (sessionStorage['peopleType'] !== params.people){
+                tellError('无权访问!')
+                toLogin()
+            }
+        }
+        ,[]
+    )
 
     //副作用钩子，用于监听每一次数据请求需要更新页面
     useEffect(()=>{
@@ -132,7 +146,7 @@ const Main=() => {
         }
     }
 
-
+    const [collapsed, setCollapsed] = useState(false);
     return  <div className={"Main"}>
         <Layout>
             <Header className="header">
@@ -143,7 +157,7 @@ const Main=() => {
                 </div>
             </Header>
             <Layout>
-                <Sider width={200} className="site-layout-background">
+                <Sider collapsed={collapsed}  onCollapse={value => setCollapsed(value)}  collapsible width={200} className="site-layout-background">
                     <Menu
                         mode="inline"
                         defaultSelectedKeys={[`sub${getSub(specific)}`]}
@@ -154,12 +168,12 @@ const Main=() => {
                         items={menus}
                     />
                 </Sider>
-                <Layout style={{ padding: '0 24px 24px' }}>
+                <Layout style={{ padding:collapsed?24:12  }}>
 
                     <Content
                         className="site-layout-background"
                         style={{
-                            padding: 24,
+                            padding:collapsed?24:0 ,
                             margin: 0,
                             minHeight: 280,
                         }}

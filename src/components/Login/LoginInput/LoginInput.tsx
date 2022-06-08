@@ -61,6 +61,8 @@ const LoginInput:React.FC = () => {
                 sessionStorage['password'] = password
                 sessionStorage['userName'] = userName
                 sessionStorage['token'] = token
+                sessionStorage['peopleType'] = peopleType
+
                 tellSuccess('登录成功!')
                 switch (peopleType as PeopleType) {
                     case PeopleType.student:{

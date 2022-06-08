@@ -7,6 +7,7 @@ import Options from "./components/Options/Options";
 import SignIn from "./components/SignIn/SignIn";
 import ForgetPassword from "./components/ForgetPassword/ForgetPassword";
 
+
 const Redirect =()=>{
     return (
         <Navigate to="/login" />
@@ -15,10 +16,11 @@ const Redirect =()=>{
 
 
 const App = () => {
+
     return (
         <BrowserRouter>
             <div className={"full"}>
-                <Routes>
+                <Routes >
                     <Route path='/login' element={<Login/>} />
                     <Route path='/sign-in' element={<SignIn/>} />
                     <Route path='/forget-password' element={<ForgetPassword/>} />

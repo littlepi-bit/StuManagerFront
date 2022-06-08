@@ -27,3 +27,7 @@ code {
   --tw-gradient-to: #1da5a0;
   --tw-gradient-from: #1da57a;
 }
+
+.ant-layout-sider-trigger {
+  background:#1DA57A!important;
+}
