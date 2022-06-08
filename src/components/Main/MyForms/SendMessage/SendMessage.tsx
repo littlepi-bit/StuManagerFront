@@ -68,7 +68,7 @@ const SendMessage = () => {
                         data.map(e=>{
                             let {userId,userName}  = e
                             const info = `${userName}(${userId})`
-                            return <Option value={info}>{info}</Option>
+                            return <Option value={userId}>{info}</Option>
                         })
                     }
                 </Select>

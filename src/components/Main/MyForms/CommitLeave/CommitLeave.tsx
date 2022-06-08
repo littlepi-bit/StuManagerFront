@@ -1,14 +1,20 @@
 import {Button, Form, Input, Select} from 'antd';
 import 'moment/locale/zh-cn';
 import {useEffect, useState} from "react";
-import {getUserInformation, myPost, tellError, tellSuccess} from "../../../../tools";
+import {getUserInformation, myPost, tellError, tellSuccess, tellWaring} from "../../../../tools";
 
 const { Option } = Select;
 
 const CommitLeave:React.FC<{
     peopleType:string
 }> = ({peopleType}) => {
+    const [selectTime,changeSelectTime] = useState<any>("请先选择一门课程!")
+
     const onFinish = (values: any) => {
+        if (selectTime === "请先选择一门课程"){
+            tellWaring("请先选择一门课程!")
+            return
+        }
         const {userId} = getUserInformation()
         console.log('Success:', values);
         myPost('/commitLeave',{
@@ -33,7 +39,6 @@ const CommitLeave:React.FC<{
         console.log('Failed:', errorInfo);
     };
     const [courses,changeCourses] = useState<any>([])
-    const [selectTime,changeSelectTime] = useState<any>("请先选择一门课程!")
 
     const onChange = (e:any) => {
         for (let i = 0; i < courses.length; i++) {
@@ -85,8 +90,10 @@ const CommitLeave:React.FC<{
                         })
                     }
                 </Select>
-                <Input value={selectTime} style={{width:"50%"}} disabled></Input>
+                <div className={"ant-select-selector"}  style={{width:"50%",padding:"0 10px",color:"#1DA57A"}} >{selectTime}</div>
+
             </Form.Item>
+
             <Form.Item
                 label="请假课程"
                 name="leaveCourseId"
