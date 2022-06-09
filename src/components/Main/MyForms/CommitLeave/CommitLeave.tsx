@@ -90,8 +90,12 @@ const CommitLeave:React.FC<{
                         })
                     }
                 </Select>
-                <div className={"ant-select-selector"}  style={{width:"50%",padding:"0 10px",color:"#1DA57A"}} >{selectTime}</div>
 
+            </Form.Item>
+            <Form.Item
+                label="请假讲次"
+            >
+                <Input value={selectTime} disabled/>
             </Form.Item>
 
             <Form.Item
