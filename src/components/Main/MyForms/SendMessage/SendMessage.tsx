@@ -14,7 +14,15 @@ const SendMessage = () => {
             myPost('/viewAlreadyRegisteredUsers',{
                 userId
             }).then(r=>{
-                setData(r.data)
+                let temp:any = []
+                r.data.forEach((each:any)=>{
+                    if (each.userId === userId){
+                        return
+                    }else {
+                        temp.push(each)
+                    }
+                })
+                setData(temp)
             })
         }
         ,[]

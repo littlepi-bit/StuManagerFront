@@ -1,7 +1,7 @@
 import {Button, Tag} from "antd";
 import {getUserInformation, info, myPost, tellError, tellSuccess} from "../../../tools";
 
-export default function TeacherAndAdministratorsLeaveMenuTypeExamStuLeaveColumn() {
+export default function TeacherAndAdministratorsLeaveMenuTypeExamStuLeaveColumn(forceUpdate:Function) {
     return [
         {
             title:"序号",
@@ -89,6 +89,7 @@ export default function TeacherAndAdministratorsLeaveMenuTypeExamStuLeaveColumn(
                         }else {
                             throw msg
                         }
+                        forceUpdate()
                     }).catch(msg=>{
                         tellError(msg)
                     })

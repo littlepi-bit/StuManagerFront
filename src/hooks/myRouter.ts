@@ -41,7 +41,7 @@ export const useOptionsRoute = (people: string | undefined)=>{
                         return navigate(`/main/${people}/${TeacherSelectCourseMenuType.selectAllTeach}`)
                     }
                     case 2:{
-                        return navigate(`/main/${people}/${TeacherAndAdministratorsLeaveMenuType.viewStuLeave}`)
+                        return navigate(`/main/${people}/${TeacherAndAdministratorsLeaveMenuType.examStuLeave}`)
                     }
                     case 3:{
                         return navigate(`/main/${people}/${MessageMenuType.seeAllReceive}`)

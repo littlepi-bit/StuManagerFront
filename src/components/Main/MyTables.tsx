@@ -46,7 +46,7 @@ export const getColumns = (type:PeopleType, specificType:SpecificMenuType,forceU
                     return TeacherAndAdministratorsLeaveMenuTypeViewStuLeaveColumn()
                 }
                 case TeacherAndAdministratorsLeaveMenuType.examStuLeave: {
-                    return TeacherAndAdministratorsLeaveMenuTypeExamStuLeaveColumn()
+                    return TeacherAndAdministratorsLeaveMenuTypeExamStuLeaveColumn(forceUpdate)
                 }
                 case TeacherSelectCourseMenuType.deleteSelectedTeach :{
                     return TeacherSelectCourseMenuTypeDeleteSelectedTeachColumn(forceUpdate)
@@ -88,7 +88,7 @@ export const getColumns = (type:PeopleType, specificType:SpecificMenuType,forceU
                     return TeacherAndAdministratorsLeaveMenuTypeViewStuLeaveColumn()
                 }
                 case TeacherAndAdministratorsLeaveMenuType.examStuLeave: {
-                    return TeacherAndAdministratorsLeaveMenuTypeExamStuLeaveColumn()
+                    return TeacherAndAdministratorsLeaveMenuTypeExamStuLeaveColumn(forceUpdate)
                 }
                 case AdministratorsAccountControl.viewNewUser :{
                     return AdministratorsAccountControlViewNewUserColumn()
