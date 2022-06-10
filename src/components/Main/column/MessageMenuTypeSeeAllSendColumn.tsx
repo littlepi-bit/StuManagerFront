@@ -34,6 +34,9 @@ export default function MessageMenuTypeSeeAllSendColumn() {
             title:"收件人",
             dataIndex:"toId",
             key:"toId",
+            render:(_:any,record: any)=>{
+                return `${record.toName}(${record.toId})`
+            }
         },
         {
             title:"发送时间",

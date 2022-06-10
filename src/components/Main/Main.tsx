@@ -52,7 +52,7 @@ const Main=() => {
         },
     );
     const [tableData,changeTableData] = useState(null)
-    const [forceFlag,forceUpdate] = useState(null)
+    const [forceFlag,forceUpdate] = useState(0)
     useEffect(
         ()=>{
             // 先判断你是否是正常方式登录
@@ -139,7 +139,9 @@ const Main=() => {
             //骨架屏
             mainInfo = <Skeleton active  />
         }else {
-            const columns = getColumns(people,specific,forceUpdate)
+            const columns = getColumns(people,specific,()=>{
+                forceUpdate(forceFlag+1)
+            })
 
             // @ts-ignore
             mainInfo = <Table columns={columns} dataSource={tableData}/>

@@ -33,6 +33,9 @@ export default function MessageMenuTypeSeeAllReceiveColumn(forceUpdate:Function)
             title:"发件人",
             dataIndex:"fromId",
             key:"fromId",
+            render:(_:any,record: any)=>{
+                return `${record.fromName}(${record.fromId})`
+            }
         },
         {
             title:"发送时间",
