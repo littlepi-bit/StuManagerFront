@@ -1,0 +1,39 @@
+[
+    {
+      "description":"这个接口就是学生按周查看所有已经选择的课程"
+    },
+    {
+      "userId": "xxxx"
+    },
+  
+    [
+      {
+        "week":"1",
+        "begin":"1",
+        "end":"2",
+        "courseId":"12138B",
+        "courseName":"离散数学",
+        "teacher":"老赵",
+        "place":"x4136"
+      },
+      {
+        "week":"1",
+        "begin":"6",
+        "end":"7",
+        "courseId":"12138B",
+        "courseName":"区块链",
+        "teacher":"赵其刚",
+        "place":"x1416"
+      },
+      {
+        "week":"1",
+        "begin":"8",
+        "end":"9",
+        "courseId":"12138B",
+        "courseName":"嵌入式",
+        "teacher":"陈大玲",
+        "place":"x2316"
+      }
+    ]
+  ]
+  

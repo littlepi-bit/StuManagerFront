@@ -17,7 +17,7 @@ export const isInEnum = (value:any,Enum:any):boolean=>{
 }
 
 export const getPostUrl = (api:string):string =>{
-    let defaultUrl = "http://120.77.12.35:8000"
+    let defaultUrl = "http://127.0.0.1:8000"
     return defaultUrl + api
 }
 

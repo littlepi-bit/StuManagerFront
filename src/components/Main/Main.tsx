@@ -1,4 +1,4 @@
-import {Button, Layout, Menu, MenuProps, Skeleton, Table} from 'antd';
+import {Button, Layout, Menu, MenuProps, Modal, Skeleton, Table} from 'antd';
 import React, {useEffect, useState} from "react"
 import "./index.scss"
 import {useMainRoute, useToLogin, useToOptions} from "../../hooks/myRouter";
@@ -10,15 +10,17 @@ import {
     PeopleType,
     SpecificMenuType,
     StudentLeaveMenuType,
+    StudentSelectCourseMenuType,
     TeacherAndAdministratorsLeaveMenuType,
 } from './mainConfig'
 import {getColumns, waitData} from "./MyTables";
 import {getMenu} from "./MyMenus";
-import {getSub, getTitle, getUserInformation, tellError} from "../../tools";
+import {getSub, getTitle, getUserInformation, info, tellError} from "../../tools";
 import CommitLeave from "./MyForms/CommitLeave/CommitLeave";
 import SendMessage from "./MyForms/SendMessage/SendMessage";
 import AddCourse from "./MyForms/AddCourse/AddCourse";
 import AddUser from "./MyForms/AddUser/AddUser";
+import Curriculum from "./Curriculum";
 
 const { Header, Content, Sider } = Layout;
 
@@ -90,6 +92,20 @@ const Main=() => {
     let mainInfo = <></>;
 
 
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
+
 
     //根据不同情况渲染不同东西
 
@@ -143,13 +159,27 @@ const Main=() => {
                 forceUpdate(forceFlag+1)
             })
 
-            // @ts-ignore
-            mainInfo = <Table columns={columns} dataSource={tableData}/>
+            if (specific === StudentSelectCourseMenuType.seeSelected){
+                mainInfo = <>
+                    <Button style={{marginBottom:10}} type={"primary"}
+                        onClick={showModal}
+                    >按周查看课表</Button>
+                    {/*// @ts-ignore*/}
+                    <Table columns={columns} dataSource={tableData}/>
+                </>
+            }else {
+                // @ts-ignore
+                mainInfo = <Table columns={columns} dataSource={tableData}/>
+            }
+
         }
     }
 
     const [collapsed, setCollapsed] = useState(false);
     return  <div className={"Main"}>
+        <Modal title="课程表如下" width={"80%"}  visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+            <Curriculum/>
+        </Modal>
         <Layout>
             <Header className="header">
                 <Button onClick={toOptions} type={"default"}>返回选择界面</Button>
