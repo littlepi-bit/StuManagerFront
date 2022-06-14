@@ -207,7 +207,7 @@ export const waitData = (type:PeopleType, specificType:SpecificMenuType):Promise
                     })
                 }
                 case AdministratorsAccountControl.delNewUser :{
-                    return myPost('/viewUser',{
+                    return myPost('/viewAlreadyRegisteredUsers',{
                         userId
                     })
                 }
